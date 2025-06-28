@@ -57,8 +57,8 @@ export default defineConfig((ctx) => {
       // analyze: true,
 
       env: {
-        // API_URL: ctx.dev ? 'https://api.new-mkc.local' : 'https://test-api-mkc.bxb.delivery',
-        API_URL: ctx.dev ? 'http://api.staff.local' : 'https://api-triangle.unaux.com/index.php?route=',
+        // Use environment variables from .env file or fallback to defaults
+        API_URL: process.env.API_URL || (ctx.dev ? 'http://api.staff.local' : 'https://api-triangle.unaux.com/index.php?route='),
       },
 
       // rawDefine: {}
